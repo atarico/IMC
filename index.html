@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Mali:ital,wght@0,700;1,500&family=Roboto:ital,wght@0,100;0,300;0,900;1,500&display=swap" rel="stylesheet">
+
+    <!-- link MIS ESTILOS -->
+    <link rel="stylesheet" href="./estilo.css">
+
+    <title>IMC</title>
+</head>
+<body>
+    
+    <h1>Calcula tu Indice de Masa Corporal</h1>
+
+<script>
+    function saltarLinea() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function imprimir(frase) {
+        saltarLinea();
+        document.write(frase);
+    }
+
+    function calcularImc(peso,altura){
+
+        return (peso/(altura*altura))
+
+    }
+
+    nombre = prompt("Ingrese su nombre")
+    pesoInformado = prompt(nombre + ", indique su peso")
+    alturaInformada = prompt(nombre + ", indique su altura")
+
+    imcCalculado = calcularImc(pesoInformado,alturaInformada)
+
+    imprimir(nombre + ", su IMC calculado es " + imcCalculado);
+
+    if(imcCalculado<18.5){
+        imprimir("Su IMC está por debajo de lo recomendado");
+    }
+    if(imcCalculado>=18.5){
+        if(imcCalculado<25){
+            imprimir("su IMC es normal");
+        }
+    }
+    if(imcCalculado>25){
+        if(imcCalculado<30){
+            imprimir("Usted tiene sobrepeso");
+        }
+    }
+    if(imcCalculado >=30){
+        imprimir("usted tiene obesidad");
+    }
+
+
+</script>
+
+</body>
+</html>
